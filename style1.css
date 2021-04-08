@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*by default 
+  total width = width + padding + margin
+  total height =height + padding + margin
+  
+  box sizing helps to avoid it
+  */
+}
+
+body {
+  background-image: linear-gradient(120deg, #66ff99, #dfa36c);
+  color: ghostwhite;
+  font-family: "Ubuntu", sans-serif;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+button {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+  outline: none;
+}
+
+button {
+  color: #dfa36c;
+  background: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  color: white;
+  background: #dfa36c;
+}
+
+.todo-box {
+  /*whole input pluslist*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-list {
+  /* list of tasks*/
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  padding: 2px;
+  font-size: 30px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: centre;
+  border: 2px solid #dfa36c;
+  border-radius: 10px;
+  transition: all 0.275s ease;
+}
+
+.todo-item {
+  /*the text of the task*/
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.mark-done,
+.delete {
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.mark-done {
+  color: #47ee63c9;
+  background: white;
+}
+.mark-done:hover {
+  background: #47ee63c9;
+  color: white;
+}
+
+.delete {
+  color: tomato;
+  background: white;
+}
+.delete:hover {
+  background: tomato;
+  color: white;
+}
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+  /*if we do not write this , if we click on the icon it wont work . We need to click on the button where the icon is not there.*/
+  /*with this piece of code written we can click on the icon and it will work.*/
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+}
+
+.filter {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #dfa36c;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.filter::after {
+  content: "\25BC";
+  position: absolute;
+  background: #dfa36c;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.filter:hover::after {
+  background: white;
+  color: #dfa36c;
+}
